@@ -10,11 +10,27 @@
     color: white;
 }
 
-.wrap .phone {
+.wrap .phone, .logo1 {
+    flex: 1;
     color: white;
+
 }
 
-.container {
-    margin: auto;  /* horizontral centering only*/
-    max-width: 1140px ;
+.logo1 {
+    text-align: end;
+    gap: 5px;   
 }
+
+.logo1 i {
+    margin-left: 15px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px ;
+    margin: auto;  /* horizontral centering only*/
+
+}
+
