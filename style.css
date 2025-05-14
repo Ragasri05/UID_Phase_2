@@ -1,0 +1,20 @@
+.wrap {
+    background-color:#006fdc;
+}
+
+.wrap .phone .c1 {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.wrap .phone .c2 {
+    color: white;
+}
+
+.wrap .phone {
+    color: white;
+}
+
+.container {
+    margin: auto;  /* horizontral centering only*/
+    max-width: 1140px ;
+}
