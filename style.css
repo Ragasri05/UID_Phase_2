@@ -1,3 +1,15 @@
+/* applies to the whole webpage */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*  body  */
+body {
+    min-height: 100vh;  /*100% view port*/
+}
+
+/* Top blue */
 .wrap {
     background-color:#006fdc;
 }
@@ -31,6 +43,31 @@
     justify-content: space-between;
     max-width: 1140px ;
     margin: auto;  /* horizontral centering only*/
-
 }
 
+
+/* Nav Bar */
+nav {
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    width: 100%; /*spans the full width of the container.*/
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;  /* controls horizontal alignment. */
+    align-items: center; /* controls vertical alignment */
+}
+
+nav li {
+    height: 100px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
