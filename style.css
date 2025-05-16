@@ -45,6 +45,17 @@ body {
     margin: auto;  /* horizontral centering only*/
 }
 
+/* Responsive :- Tob blue */  
+/* removing top blue for width < 820px */
+@media only screen and (max-width: 820px ){
+    .wrap .container .phone{
+        display: none;
+    }
+
+    .wrap .container .logo1{
+        display: none;
+    }
+}
 
 /* Nav Bar */
 nav {
