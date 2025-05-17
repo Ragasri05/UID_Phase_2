@@ -60,11 +60,11 @@ body {
 /* Nav Bar */
 nav {
     background-color: white;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
-    width: 100%; /*spans the full width of the container.*/
+    width: 100%;/*spans the full width of the container.*/
     list-style: none;
     display: flex;
     justify-content: flex-end;  /* controls horizontal alignment. */
@@ -76,9 +76,54 @@ nav li {
 }
 
 nav a {
-    height: 100%;
+    color: #333;
+    height: 100%;  /* to make them match the height of the nav bar*/
     padding: 0 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
+    letter-spacing: normal;
 }
+
+nav a:hover {
+    letter-spacing: 1px;
+    color: #006fdc;
+    background-color: rgb(247, 247, 247);
+}
+
+nav li:first-child {
+    margin-right: auto;  /*pushes everything else to the right keeping the logo fixed to the left.*/
+}
+
+nav a:hover {
+    color: #006fdc;
+}
+
+/* Side bar */
+.side_bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.side_bar li{
+    width: 100%;
+}
+
+.side_bar a{
+    width: 100%;
+}
+
+
+
