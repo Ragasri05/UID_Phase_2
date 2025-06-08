@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- Proper viewport meta tag -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fitness Website</title>
-        
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-        <style>
-            * {
-                margin: 0;
-                font-family: 'Poppins', sans-serif;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                overflow-x: hidden; /* Prevent horizontal scrolling */
-            }
-
-            .banner {
-                width: 100%;
-                height: 100vh;
-                background-image: linear-gradient(rgba(153, 151, 151, 0.75), rgba(95, 90, 90, 0.75)), url(images/home_background.jpg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            /* Nav Bar */
-            nav {
+nav {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -167,53 +132,7 @@
                 cursor: pointer;
                 padding: 10px;
             }
-
-            .content {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-                padding: 0 20px;
-            }
-
-            .content h1 {
-                padding-top: 300px;
-                color: white;
-                padding-bottom: 20px;
-                font-size: 2.5rem;
-            }
-
-            .content p {
-                color: white;
-                margin-bottom: 20px;
-                font-size: 1.2rem;
-            }
-
-            .content a {
-                color: #02d0bc;
-                font-size: 25px;
-                transition: all 0.5s ease;
-                text-decoration: none;
-                padding: 10px 30px;
-                border: 2px solid transparent;
-                border-radius: 40px;
-            }
-
-            .content a:hover {
-                color: white;
-                background-color: #02d0bc;
-                border-color: #02d0bc;
-            }
-            .footer {
-      background-color: #2e3339;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 16px;
-    }
-
-            /* Responsive Styles */
+ /* Responsive Styles */
             @media (max-width: 930px) {
                 .visible {
                     display: none !important; /* Ensure it overrides other styles */
@@ -228,41 +147,15 @@
                     height: 50px;
                     width: 120px;
                 }
-
-                .content h1 {
-                    padding-top: 200px;
-                    font-size: 2rem;
-                }
-
-                .content p {
-                    font-size: 1rem;
-                }
-
-                .content a {
-                    font-size: 1.2rem;
-                    padding: 8px 20px;
-                }
-
-                /* Ensure nav items are properly hidden */
-                .main-nav .visible {
+                 .main-nav .visible {
                     display: none;
                 }
             }
 
-            @media (max-width: 480px) {
-                .content h1 {
-                    font-size: 1.5rem;
-                    padding-top: 150px;
-                }
-                
-                .content p {
-                    font-size: 0.9rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="banner">
+
+
+            /* code for nav bar
+            html code. 
             <nav>
                 <div class="logo-container">
                     <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
@@ -301,17 +194,9 @@
                 </ul>
             </nav>
 
-            <div class="content">
-                <h1>GET STRONGER! GET FITTER! GET RUSHING!</h1>
-                <p>Your journey to a healthier, happier you starts now</p>
-                <a href="about.html">Know more!</a>
-            </div>
-        </div>
-        <footer class="footer">
-    <p>© 2025 FitRush. All rights reserved.</p>
-  </footer>
-
-        <script>
+            /*script for nav*/
+            /*
+            <script>
             function showSidebar() {
                 const sidebar = document.querySelector('.side_bar');
                 sidebar.classList.add('active');
@@ -344,5 +229,5 @@
                 }
             });
         </script>
-    </body>
-</html>
+            
+            */

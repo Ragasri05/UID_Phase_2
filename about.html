@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Proper viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    <title>Fitness Website</title>
+        
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="consultation.css">
+</head>
+<body>
+    <div class="about_banner">
+        <nav>
+                <div class="logo-container">
+                    <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
+                </div>
+        
+                <ul class="main-nav">
+                    <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="#">Services</a></li>
+                    <li class="visible"><a href="#">BMI</a></li>
+                    <li class="visible"><a href="#">Stories</a></li>
+                    <li class="visible"><a href="#">Testimonies</a></li>
+                    <li class="visible"><a href="#">Login</a></li>
+                    <li class="menu-button" onclick="showSidebar()">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="side_bar">
+                    <li class="close-button" onclick="hideSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">BMI</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Testimonies</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="about_top">
+                <img src="images/aboutImg_!.jpg" alt="">
+                <div class="abt_text">
+                <h3>WELCOME TO FITRUSH</h3>
+                <h1>Hello! FitRush is a natural way of improving your health</h1>
+                <p>At FitRush, we believe in a holistic approach to fitness that combines cutting-edge techniques with natural movement principles. Our programs are designed to help you build strength, improve mobility, and enhance overall wellbeing through scientifically-backed, sustainable methods.</p>
+            </div>
+            </div>
+    </div>
+    </div>
+    <div class="consultation">
+        <div class="consultation_text">
+        <h1>WE PROVIDE FREE HEALTHCARE CONSULTATION</h1>
+        <p>Your Health is Our Top Priority with Comprehensive, Affordable Health.</p>
+        </div>
+        <div class="Consulation_button">
+            Free Consulation
+        </div>
+    </div>
+    <footer class="footer">
+    <p>© 2025 FitRush. All rights reserved.</p>
+  </footer>
+
+
+
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+                    hideSidebar();
+                }
+            });
+        </script>
+</body>
+</html>
