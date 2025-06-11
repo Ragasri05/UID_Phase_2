@@ -1,0 +1,230 @@
+      nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100px;
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          backdrop-filter: blur(5px);
+      }
+
+      /* Logo container */
+      .logo-container {
+          margin-right: auto;
+      }
+
+      .logo img {
+          height: 70px;
+          width: 150px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+      }
+
+      /* Main navigation */
+      .main-nav {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          gap: 20px;
+      }
+
+      nav li {
+          height: 100px;
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+      }
+
+      nav a {
+          color: rgb(255, 72, 0);
+          font-size: 15px;
+          height: 100%;
+          padding: 0 20px;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+          letter-spacing: 1px;
+          color: black;
+      }
+
+      nav li::after {
+          content: '';
+          height: 3px;
+          width: 0;
+          background: #f96d00;
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          transition: 0.5s;
+      }
+
+      nav li:hover::after {
+          width: 100%;
+      }
+
+      /* Side bar styles */
+      .side_bar {
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 250px;
+          z-index: 9999;
+          background-color: rgba(0, 0, 0, 0.9); /* Darker for better contrast */
+          backdrop-filter: blur(10px);
+          box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding-top: 60px;
+          transform: translateX(100%);
+          transition: transform 0.3s ease-out;
+      }
+
+      .side_bar.active {
+          display: flex;
+          transform: translateX(0);
+      }
+
+      .side_bar li {
+          width: 100%;
+          padding: 10px 0;
+      }
+
+      .side_bar a {
+          width: 100%;
+          padding: 15px 30px;
+          color: white !important; /* Override any other styles */
+      }
+
+      .side_bar a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-button {
+          display: none;
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          padding: 10px;
+          z-index: 10000;
+      }
+
+      .close-button {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          padding: 10px;
+      }
+/* Responsive Styles */
+      @media (max-width: 930px) {
+          .visible {
+              display: none !important; /* Ensure it overrides other styles */
+          }
+          
+          .menu-button {
+              display: block;
+          }
+          
+          /* Adjust logo size on mobile */
+          .logo img {
+              height: 50px;
+              width: 120px;
+          }
+           .main-nav .visible {
+              display: none;
+          }
+      }
+
+
+
+            /* code for nav bar 
+            <nav>
+                <div class="logo-container">
+                    <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
+                </div>
+        
+                <ul class="main-nav">
+                    <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="#">Services</a></li>
+                    <li class="visible"><a href="#">BMI</a></li>
+                    <li class="visible"><a href="#">Stories</a></li>
+                    <li class="visible"><a href="#">Testimonies</a></li>
+                    <li class="visible"><a href="#">Login</a></li>
+                    <li class="menu-button" onclick="showSidebar()">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="side_bar">
+                    <li class="close-button" onclick="hideSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_1.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">BMI</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Testimonies</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+                    hideSidebar();
+                }
+            });
+        </script>
+            
+            */

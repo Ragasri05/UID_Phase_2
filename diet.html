@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link rel = "stylesheet" href = "nav.css">
+  <title>Diet Program | Health Coach</title>
+  <style>
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/bg_4.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 120px 20px 60px;
+      text-align: center;
+      height: 16rem;
+}
+
+    .hero h1 {
+      font-size: 42px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      margin-top: 8rem;
+      margin-bottom: -2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card .img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      padding: 0 15px 15px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      background: transparent;
+      border: 2px solid #f96d00;
+      color: #f96d00;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #f96d00;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    .footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 20px 30px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      justify-content: space-evenly;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+    }
+
+    .footer-heading {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #f96d00;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 16px;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #f96d00;
+    }
+
+    .subscribe-form {
+      display: flex;
+      max-width: 300px;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 14px;
+    }
+
+    .subscribe-form button {
+      padding: 10px 16px;
+      background-color: #f96d00;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-form button:hover {
+      background-color: #e85c00;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+      }
+
+      .subscribe-form input[type="email"],
+      .subscribe-form button {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+    </div>
+
+    <ul class="main-nav">
+        <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="service.html">Services</a></li>
+                    <li class="visible"><a href="bmi.html">BMI</a></li>
+                    <li class="visible"><a href="stories-page1.html">Stories</a></li>
+                    <li class="visible"><a href="store.html">Store</a></li>
+                    <li class="visible"><a href="login.html">Login</a></li>
+        <li class="menu-button" onclick="showSidebar()">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="side_bar">
+        <li class="close-button" onclick="hideSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </li>
+        <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="stories-page1.html">Stories</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+
+                    hideSidebar();
+                }
+
+            });
+        </script>
+
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('images/eat1.jpg'); background-size: cover;">
+    <p><a href="index.html" style="color:#f96d00; text-decoration: none;">Home</a> &gt; <a href="service.html" style="color:#f96d00; text-decoration: none;">Service</a> &gt; <span>Diet Program</span></p>
+    <h1>Diet Program</h1>
+  </section>
+
+  <!-- Diet Program Cards -->
+  <section class="container">
+    <div class="cards">
+      <div class="card">
+        <div class="img" style="background-image: url('images/keto.webp');"></div>
+        <h3>Keto Diet Plan</h3>
+        <p>High-fat, low-carb meal plans to help you enter ketosis and burn fat efficiently.</p>
+        <a href="#" class="btn">Discover More</a>
+      </div>
+      <div class="card">
+        <div class="img" style="background-image: url('images/medi.webp');"></div>
+        <h3>Mediterranean Diet</h3>
+        <p>Balanced meals inspired by the Mediterranean lifestyle for heart health and longevity.</p>
+        <a href="#" class="btn">Discover More</a>
+      </div>
+      <div class="card">
+        <div class="img" style="background-image: url('images/veg.webp');"></div>
+        <h3>Vegetarian Plan</h3>
+        <p>Plant-based diet plans rich in nutrients, fiber, and vitamins for optimal health.</p>
+        <a href="#" class="btn">Discover More</a>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2 class="footer-heading">FitRush</h2>
+      <p>Transform your body and mind with expert fitness plans built for real results.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section links">
+      <h2 class="footer-heading">Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h2 class="footer-heading">Contact Us</h2>
+      <p><i class="fas fa-envelope"></i> support@FitRush.com</p>
+      <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Knowledge City</p>
+    </div>
+
+    <div class="footer-section subscribe">
+      <h2 class="footer-heading">Subscribe</h2>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 FitRush. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
+

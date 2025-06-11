@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel = "stylesheet" href="nav_1.css">
+</head>
+  
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    
+    .hero-wrap {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('images/hero-bg.jpg') no-repeat center center/cover;
+      height: 400px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .slider-text {
+      color: #fff;
+      text-align: center;
+      padding-bottom: 60px;
+    }
+
+    .breadcrumbs {
+      font-size: 14px;
+    }
+
+    .breadcrumbs a {
+      color: #f96d00;
+    }
+
+    .bread {
+      font-size: 44px;
+      font-weight: bold;
+    }
+
+   
+    .ftco-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .heading-section {
+      font-size: 32px;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 40px;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1 1 300px;
+      max-width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .services-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .services-wrap:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .services-wrap .img {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .media-body {
+      padding: 25px 20px;
+    }
+
+    .heading {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .media-body p {
+      font-size: 15px;
+      color: #666;
+    }
+
+  
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary {
+      border: 2px solid #f96d00;
+      color: #f96d00;
+      background: transparent;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #f96d00;
+      color: #fff;
+    }
+
+    .footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 20px 30px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      justify-content: space-evenly;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+    }
+
+    .footer-heading {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #f96d00;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 16px;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #f96d00;
+    }
+
+    .subscribe-form {
+      display: flex;
+      max-width: 300px;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 14px;
+    }
+
+    .subscribe-form button {
+      padding: 10px 16px;
+      background-color: #f96d00;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-form button:hover {
+      background-color: #e85c00;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+      }
+
+      .subscribe-form input[type="email"],
+      .subscribe-form button {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    }
+
+
+    #ftco-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .circular {
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      
+
+      .hero-wrap {
+        height: 300px;
+      }
+
+      .slider-text {
+        text-align: center;
+      }
+    }
+  </style>
+
+<body>
+
+ 
+  <nav>
+    <div class="logo-container">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+    </div>
+
+    <ul class="main-nav">
+        <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="service.html">Services</a></li>
+                    <li class="visible"><a href="bmi.html">BMI</a></li>
+                    <li class="visible"><a href="stories-page1.html">Stories</a></li>
+                    <li class="visible"><a href="store.html">Store</a></li>
+                    <li class="visible"><a href="login.html">Login</a></li>
+        <li class="menu-button" onclick="showSidebar()">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </a>
+        </li>
+
+    </ul>
+
+    <ul class="side_bar">
+        <li class="close-button" onclick="hideSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </li>
+
+        <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="stories-page1.html">Stories</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+                    hideSidebar();
+                }
+            });
+        </script>
+  
+  
+  
+  <section class="hero-wrap" style="background-image: url('images/yoga.jpg'); background-size: cover;">
+    <div class="container">
+      <div class="slider-text">
+        <p class="breadcrumbs"><a href="index.html">Home</a> > <span>Service</span></p>
+        <h1 class="bread">Services</h1>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="text-center">
+          <h2 class="heading-section">Our Services</h2>
+        </div>
+      </div>
+      <div class="row cards-row">
+        <div class="column">
+          <div class="services-wrap">
+            <div class="img" style="background-image: url('images/work.jpg');"></div>
+            <div class="media-body">
+              <h3 class="heading">Exercise Program</h3>
+              <p>Customized fitness plans to help you get stronger, healthier, and more active every day.</p>
+              <p><a href="Exercise.html" class="btn btn-outline-primary">READ MORE</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="services-wrap">
+            <div class="img" style="background-image: url('images/food.jpg');"></div>
+            <div class="media-body">
+              <h3 class="heading">Nutrition Plan</h3>
+              <p>Healthy and realistic diet strategies designed by professionals for long-term wellness.</p>
+              <p><a href="nutrition.html" class="btn btn-outline-primary">READ MORE</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="services-wrap">
+            <div class="img" style="background-image: url('images/dietplan.jpg');"></div>
+            <div class="media-body">
+              <h3 class="heading">Diet Program</h3>
+              <p>Sustainable eating plans that align with your goals, preferences, and health needs.</p>
+              <p><a href="diet.html" class="btn btn-outline-primary">READ MORE</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2 class="footer-heading">FitRush</h2>
+      <p>Transform your body and mind with expert fitness plans built for real results.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section links">
+      <h2 class="footer-heading">Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="Service.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h2 class="footer-heading">Contact Us</h2>
+      <p><i class="fas fa-envelope"></i> support@FitRush.com</p>
+      <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Knowledge City</p>
+    </div>
+
+    <div class="footer-section subscribe">
+      <h2 class="footer-heading">Subscribe</h2>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 FitRush. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  
+  <script>
+   
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+
+   
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("ftco-loader");
+      if (loader) {
+        loader.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+

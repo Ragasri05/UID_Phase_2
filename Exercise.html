@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise Program - FitRush</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  
+  <link rel="stylesheet" href="nav.css" />
+</head>
+
+<style>
+/* Base and Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    /* Hero Section */
+    .hero-wrap {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('images/services-1.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-wrap .breadcrumbs {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-wrap .breadcrumbs a {
+      color: #f96d00;
+    }
+
+    .hero-wrap .bread {
+      font-size: 44px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Section Container */
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Headings */
+    .heading-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .heading-section h2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .heading-section p {
+      font-size: 16px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* Two Columns */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .col-half {
+      flex: 1 1 480px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* List with Checkmarks */
+    ul.iteml li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 28px;
+    }
+    
+    ul.iteml {
+      margin-bottom: 2rem;
+    }
+
+    ul.iteml li::before {
+      content: '\f00c';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #f96d00;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 4px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #f96d00;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #e85c00;
+    }
+
+    .btn-outline-primary {
+      border: 2px solid #f96d00;
+      color: #f96d00;
+      background: transparent;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #f96d00;
+      color: #fff;
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: -15px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 1px solid #ccc;
+      padding: 12px 15px;
+      text-align: center;
+    }
+
+    .schedule-table th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .hero-wrap {
+        height: 300px;
+        padding-bottom: 40px;
+      }
+
+      .hero-wrap .bread {
+        font-size: 32px;
+      }
+
+      .heading-section h2 {
+        font-size: 26px;
+      }
+    }
+    
+    .footer {
+      background: #111;
+      color: #ccc;
+      padding: 60px 20px 30px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      justify-content: space-evenly;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+    }
+
+    .footer-heading {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #f96d00;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 16px;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #f96d00;
+    }
+
+    .subscribe-form {
+      display: flex;
+      max-width: 300px;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 14px;
+    }
+
+    .subscribe-form button {
+      padding: 10px 16px;
+      background-color: #f96d00;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-form button:hover {
+      background-color: #e85c00;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+      }
+
+      .subscribe-form input[type="email"],
+      .subscribe-form button {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    }
+
+
+
+</style>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo-container">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+    </div>
+
+    <ul class="main-nav">
+        <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="service.html">Services</a></li>
+                    <li class="visible"><a href="bmi.html">BMI</a></li>
+                    <li class="visible"><a href="stories-page1.html">Stories</a></li>
+                    <li class="visible"><a href="store.html">Store</a></li>
+                    <li class="visible"><a href="login.html">Login</a></li>
+        <li class="menu-button" onclick="showSidebar()">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="side_bar">
+        <li class="close-button" onclick="hideSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </li>
+        <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="stories-page1.html">Stories</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+
+                    hideSidebar();
+                }
+
+            });
+        </script>
+
+  <!-- Hero Section -->
+  <section class="hero-wrap" aria-label="Page header with breadcrumb navigation" style="background-image: url('images/run.jpg'); background-size: cover;">
+    <div>
+      <p class="breadcrumbs"><a href="index.html">Home</a> &gt; <a href="Service.html">Service</a> &gt; <span>Exercise Program</span></p>
+      <h1 class="bread">Exercise Program</h1>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="section" aria-labelledby="program-title">
+    <div class="heading-section">
+      <h2 id="program-title">Exercise Program</h2>
+      <p>Customized fitness plans to help you get stronger, healthier, and more active every day.</p>
+    </div>
+
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-half">
+        <img src="images/work1.jpg" alt="Person exercising" style="width:100%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);" />
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-half">
+        <h3>What You'll Get</h3>
+        <ul class="iteml">
+          <li>Personalized workout routines tailored to your goals</li>
+          <li>Access to expert trainers for guidance</li>
+          <li>Flexible schedules to fit your lifestyle</li>
+          <li>Progress tracking and motivation support</li>
+        </ul>
+
+        <h3>Schedule</h3>
+        <table class="schedule-table" aria-describedby="schedule-desc">
+          <caption id="schedule-desc" style="text-align:left; margin-bottom: 10px;">Weekly exercise sessions overview</caption>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Session Type</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>Strength Training</td><td>60 minutes</td></tr>
+            <tr><td>Wednesday</td><td>Cardio & Core</td><td>45 minutes</td></tr>
+            <tr><td>Friday</td><td>Flexibility & Balance</td><td>30 minutes</td></tr>
+          </tbody>
+        </table>
+
+        <a href="contact.html" class="btn btn-primary" style="margin-top:30px;">Sign Up Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2 class="footer-heading">FitRush</h2>
+      <p>Transform your body and mind with expert fitness plans built for real results.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section links">
+      <h2 class="footer-heading">Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="Service.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h2 class="footer-heading">Contact Us</h2>
+      <p><i class="fas fa-envelope"></i> support@FitRush.com</p>
+      <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Knowledge City</p>
+    </div>
+
+    <div class="footer-section subscribe">
+      <h2 class="footer-heading">Subscribe</h2>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 FitRush. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
