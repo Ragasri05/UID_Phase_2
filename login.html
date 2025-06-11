@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In / Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f7f8fa;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Auth container */
+    .auth-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background: #f7f8fa;
+      margin-top: 100px; /* Account for fixed navbar */
+    }
+
+    .auth-wrap {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+    }
+
+    /* Left form section */
+    .auth-form {
+      flex: 1;
+      padding: 40px 40px 50px;
+      min-width: 300px;
+    }
+
+    /* Right side image */
+    .auth-images {
+      flex: 1;
+      background: url('https://images.unsplash.picsum/photo-1554284126-6a4776ff915b?auto=format&fit=crop&w=700&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      min-height: 400px;
+    }
+
+    .auth-images::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 130, 246, 0.4); /* light blue overlay */
+    }
+
+    .auth-images-text {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.3rem;
+      z-index: 1;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+
+    /* Tabs styling */
+    .nav-tabs {
+      border-bottom: none;
+      margin-bottom: 30px;
+    }
+    .nav-tabs .nav-link {
+      color: #555;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 12px 25px;
+      transition: all 0.3s ease;
+    }
+    .nav-tabs .nav-link:hover {
+      color:#3b82f6;
+    }
+    .nav-tabs .nav-link.active {
+      border-bottom: 3px solid #3b82f6;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    /* Form controls */
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 6px;
+      border: 1.5px solid #ddd;
+      padding: 12px 15px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #3b82f6;
+      outline: none;
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      padding: 12px 0;
+      width: 100%;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    .btn-primary:hover {
+      background-color: #2563eb;
+    }
+
+    /* Checkbox label */
+    .form-check-label {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .auth-wrap {
+        flex-direction: column;
+        border-radius: 10px;
+        margin: 20px;
+      }
+      
+      .auth-form {
+        padding: 30px 20px;
+      }
+
+      .auth-images {
+        min-height: 250px;
+        order: -1; /* Move image to top on mobile */
+      }
+
+      .auth-images-text {
+        font-size: 1.1rem;
+        padding: 10px;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+      }
+
+      .nav-tabs .nav-link {
+        padding: 10px 15px;
+        font-size: 1rem;
+      }
+
+      .form-control {
+        padding: 10px 12px;
+      }
+
+      .btn-primary {
+        padding: 10px 0;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-container {
+        padding: 20px 10px;
+      }
+
+      .auth-wrap {
+        margin: 10px;
+      }
+
+      .auth-form {
+        padding: 20px 15px;
+      }
+
+      .auth-images {
+        min-height: 200px;
+      }
+
+      .auth-images-text {
+        font-size: 1rem;
+        padding: 8px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+      }
+
+      .nav-tabs .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+      <a href="index.html" class="logo"><img src="logo.jpg" alt="logo"></a>
+    </div>
+
+    <ul class="main-nav">
+      <li class="visible"><a href="index.html">Home</a></li>
+      <li class="visible"><a href="about.html">About</a></li>
+      <li class="visible"><a href="services.html">Services</a></li>
+      <li class="visible"><a href="bmi.html">BMI</a></li>
+      <li class="visible"><a href="stories-page1.html">Stories</a></li>
+      <li class="visible"><a href="#">Testimonies</a></li>
+      <li class="visible"><a href="login.html">Login</a></li>
+      <li class="menu-button" onclick="showSidebar()">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="side_bar">
+      <li class="close-button" onclick="hideSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="stories-page1.html">Stories</a></li>
+      <li><a href="#">Testimonies</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Auth Container -->
+  <div class="auth-container">
+    <div class="auth-wrap">
+      <div class="auth-form">
+        <ul class="nav nav-tabs" id="authTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab">Sign Up</a>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="authTabsContent">
+          <!-- Sign In Form -->
+          <div class="tab-pane fade show active" id="signin" role="tabpanel">
+            <form>
+              <div class="form-group">
+                <label for="signin-email">Email</label>
+                <input type="email" class="form-control" id="signin-email" required>
+              </div>
+              <div class="form-group">
+                <label for="signin-password">Password</label>
+                <input type="password" class="form-control" id="signin-password" required>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me">
+                <label class="form-check-label" for="remember-me">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+          </div>
+
+          <!-- Sign Up Form -->
+          <div class="tab-pane fade" id="signup" role="tabpanel">
+            <form>
+              <div class="form-group">
+                <label for="signup-name">Full Name</label>
+                <input type="text" class="form-control" id="signup-name" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" class="form-control" id="signup-email" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" class="form-control" id="signup-password" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="signup-confirm-password" required>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms">I agree to the Terms & Conditions</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-images">
+        <div class="auth-images-text">
+          Join our fitness community and start your journey to a healthier lifestyle today!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS + jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Sidebar Script -->
+  <script>
+    function showSidebar() {
+        const sidebar = document.querySelector('.side_bar');
+        sidebar.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+    }
+    
+    function hideSidebar() {
+        const sidebar = document.querySelector('.side_bar');
+        sidebar.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const sidebar = document.querySelector('.side_bar');
+        const menuButton = document.querySelector('.menu-button');
+        
+        if (sidebar.classList.contains('active') && 
+            !sidebar.contains(event.target) && 
+            event.target !== menuButton && 
+            !menuButton.contains(event.target)) {
+            hideSidebar();
+        }
+    });
+
+    // Close sidebar when window is resized above 816px
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 816) {
+            hideSidebar();
+        }
+    });
+  </script>
+</body>
+</html>

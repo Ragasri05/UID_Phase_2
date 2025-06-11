@@ -128,3 +128,43 @@
                 font-size: 1rem;
             }
         }
+
+        .consultation{
+    width: 100%;
+    height: 300px;
+    background-color: #009688;
+}
+
+.consultation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.consultation_text h1 {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.consultation_text p {
+    color: white;
+}
+
+.Consulation_button a{
+    border: solid 2px white;
+    border-radius: 7px;
+    padding: 20px 50px;
+    background-color: white;
+    color: rgb(95, 95, 95);
+    text-decoration: none;
+}
+
+.Consulation_button a:hover {
+    border: solid 2px white;
+    border-radius: 7px;
+    padding: 20px 50px;
+    background-color:#009688; /* Darker blue with full opacity */
+    color: white;
+}

@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="nav.css">
   <title>BMI Calculator</title>
   <style>
     /* Base Styles */
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f9;
+      background:  #009688;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,7 +20,7 @@
     }
 
     .container {
-      background: #fff;
+      background: #f3f3f3;
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -101,6 +103,43 @@
   </style>
 </head>
 <body>
+  <nav style="background-color:  #096057;">
+                <div class="logo-container">
+                    <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
+                </div>
+        
+                <ul class="main-nav">
+                    <li class="visible"><a href="index.html">Home</a></li>
+                    <li class="visible"><a href="about.html">About</a></li>
+                    <li class="visible"><a href="#">Services</a></li>
+                    <li class="visible"><a href="#">BMI</a></li>
+                    <li class="visible"><a href="#">Stories</a></li>
+                    <li class="visible"><a href="#">Testimonies</a></li>
+                    <li class="visible"><a href="#">Login</a></li>
+                    <li class="menu-button" onclick="showSidebar()">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="side_bar">
+                    <li class="close-button" onclick="hideSidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_1.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">BMI</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Testimonies</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
   <div class="container">
     <h1>BMI Calculator</h1>
     <div class="input-group">
@@ -146,6 +185,40 @@
         categoryElement.style.color = "#F44336"; // Red
       }
     });
+
+
+    function showSidebar() {
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+    }
+            
+    function hideSidebar() {
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+            // Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+    const sidebar = document.querySelector('.side_bar');
+    const menuButton = document.querySelector('.menu-button');
+                
+    if (sidebar.classList.contains('active') && 
+    !sidebar.contains(event.target) && 
+    event.target !== menuButton && 
+    !menuButton.contains(event.target)) {
+    hideSidebar();
+    }
+    });
+
+            // Close sidebar when window is resized above 816px
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 816) {
+        hideSidebar();
+      }
+    });
+    
   </script>
 </body>
 </html>

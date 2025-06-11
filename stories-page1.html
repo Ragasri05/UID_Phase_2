@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Success Stories - Page 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-container">
+      <a href="index.html" class="logo"><img src="logo.jpg" alt="logo"></a>
+    </div>
+
+    <ul class="main-nav">
+      <li class="visible"><a href="index.html">Home</a></li>
+      <li class="visible"><a href="about.html">About</a></li>
+      <li class="visible"><a href="services.html">Services</a></li>
+      <li class="visible"><a href="bmi.html">BMI</a></li>
+      <li class="visible"><a href="stories-page1.html">Stories</a></li>
+      <li class="visible"><a href="#">Testimonies</a></li>
+      <li class="visible"><a href="login.html">Login</a></li>
+      <li class="menu-button" onclick="showSidebar()">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="side_bar">
+      <li class="close-button" onclick="hideSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="stories-page1.html">Stories</a></li>
+      <li><a href="#">Testimonies</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-wrap" style="background-image: url('https://picsum.photos/1200/400?random=100'); margin-top: 100px;">
+    <div class="overlay"></div>
+    <div class="container text-center text-white py-5">
+      <h1 style="color: #28a745;">Success Stories</h1>
+    </div>
+  </section>
+
+  <!-- Stories -->
+  <section class="py-5 stories-section" style="margin-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <!-- Main content -->
+        <div class="col-lg-8">
+          <!-- Repeat Story Cards -->
+          <div class="card mb-4 story-wrap">
+            <div class="row no-gutters">
+              <div class="col-md-5" style="background-image: url('https://picsum.photos/400/300?random=1'); background-size: cover; height: 220px;"></div>
+              <div class="col-md-7 p-3">
+                <h4>Story About: <span>John Doe</span></h4>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 story-wrap">
+            <div class="row no-gutters">
+              <div class="col-md-5" style="background-image: url('https://picsum.photos/400/300?random=2'); background-size: cover; height: 220px;"></div>
+              <div class="col-md-7 p-3">
+                <h4>Story About: <span>Jane Smith</span></h4>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 story-wrap">
+            <div class="row no-gutters">
+              <div class="col-md-5" style="background-image: url('https://picsum.photos/400/300?random=3'); background-size: cover; height: 220px;"></div>
+              <div class="col-md-7 p-3">
+                <h4>Story About: <span>Alex Green</span></h4>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 story-wrap">
+            <div class="row no-gutters">
+              <div class="col-md-5" style="background-image: url('https://picsum.photos/400/300?random=4'); background-size: cover; height: 220px;"></div>
+              <div class="col-md-7 p-3">
+                <h4>Story About: <span>Chris Blue</span></h4>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+
+       
+
+        </div>
+  </section>
+
+  <!-- Pagination -->
+   <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                <span class="page-link">«</span>
+                </li>
+                <li class="page-item active" aria-current="page">
+                <span class="page-link">1</span>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="stories-page2.html">2</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="stories-page3.html">3</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="stories-page2.html">»</a>
+                </li>
+            </ul>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">© <script>document.write(new Date().getFullYear());</script> FitRush. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap + jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Sidebar JavaScript -->
+  <script>
+    function showSidebar() {
+      const sidebar = document.querySelector('.side_bar');
+      sidebar.style.display = 'flex';
+    }
+
+    function hideSidebar() {
+      const sidebar = document.querySelector('.side_bar');
+      sidebar.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

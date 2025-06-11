@@ -198,7 +198,7 @@ nav {
             /*
             <script>
             function showSidebar() {
-                const sidebar = document.querySelector('.side_bar');
+                const sidebar = document.querySelector('.side_bar'); // selects the elements with class "side_bar" and assigns it to a variable side_bar
                 sidebar.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
             }
