@@ -267,44 +267,7 @@
     </ul>
   </nav>
 
-            <script>
-            function showSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-
-                sidebar.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
-
-            }
-            
-            function hideSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            }
-
-            // Close sidebar when clicking outside of it
-            document.addEventListener('click', function(event) {
-                const sidebar = document.querySelector('.side_bar');
-                const menuButton = document.querySelector('.menu-button');
-                
-                if (sidebar.classList.contains('active') && 
-
-                    !sidebar.contains(event.target) && 
-                    event.target !== menuButton && 
-                    !menuButton.contains(event.target)) {
-                    hideSidebar();
-                }
-            });
-
-            // Close sidebar when window is resized above 816px
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 816) {
-
-                    hideSidebar();
-                }
-
-            });
-        </script>
+      
 
 
   <!-- Hero Section -->
@@ -380,7 +343,47 @@
     <p>&copy; 2025 FitRush. All rights reserved.</p>
   </div>
 </footer>
+      <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
 
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+                // hiding the menu button
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'none';
+
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close sidebar when clicking outside of it
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            // Close sidebar when window is resized above 816px
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+
+                    hideSidebar();
+                }
+
+            });
+        </script>
 
 </body>
 </html>

@@ -84,6 +84,9 @@
                 const sidebar = document.querySelector('.side_bar');
                 sidebar.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+                // hiding the menu button
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'none';
             }
             
             function hideSidebar() {

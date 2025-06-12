@@ -3,352 +3,372 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <title>Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
-  <link rel = "stylesheet" href="nav_1.css">
-</head>
-  
+  <title>FitRush Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="nav.css">
   <style>
-    
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-    
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    h1 {
+      font-size: 30px;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    
-    .hero-wrap {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                  url('images/hero-bg.jpg') no-repeat center center/cover;
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1670050086722-e0c2e52b5f09?q=80&w=3474&auto=format&fit=crop') center/cover no-repeat fixed;
       height: 400px;
-      position: relative;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-start;
     }
 
-    .slider-text {
-      color: #fff;
-      text-align: center;
-      padding-bottom: 60px;
+    .hero-text {
+      padding: 40px;
+      margin-left: 300px;
+      color: white;
     }
 
-    .breadcrumbs {
-      font-size: 14px;
+    .hero h1 {
+      font-size: 36px;
     }
 
-    .breadcrumbs a {
-      color: #f96d00;
-    }
-
-    .bread {
-      font-size: 44px;
-      font-weight: bold;
-    }
-
-   
-    .ftco-section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .heading-section {
-      font-size: 32px;
-      font-weight: 600;
-      color: #222;
-      margin-bottom: 40px;
-    }
-
-    .cards-row {
+    /* Services Section */
+    .services {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
     }
 
-    .column {
-      flex: 1 1 300px;
-      max-width: 350px;
-      transition: transform 0.3s ease;
-    }
-
-    .services-wrap {
+    .card {
+      background: white;
       border-radius: 12px;
       overflow: hidden;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .services-wrap:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .services-wrap .img {
+    .card img {
       width: 100%;
-      height: 220px;
-      background-size: cover;
-      background-position: center;
+      height: auto;
     }
 
-    .media-body {
-      padding: 25px 20px;
-    }
-
-    .heading {
+    .card h3 {
       font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      margin: 20px 0 10px;
     }
 
-    .media-body p {
-      font-size: 15px;
+    .card p {
+      font-size: 14px;
       color: #666;
+      padding: 0 15px;
     }
 
-  
-    .btn {
+    .read-more {
       display: inline-block;
-      padding: 10px 20px;
-      margin-top: 15px;
-      border-radius: 4px;
+      font-family: 'Roboto', sans-serif;
       font-weight: 500;
+      text-transform: uppercase;
+      margin: 20px;
+      padding: 10px 20px;
+      border: 2px solid #007bff;
+      background: white;
+      color: #007bff;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
       transition: all 0.3s ease;
     }
 
-    .btn-outline-primary {
-      border: 2px solid #f96d00;
-      color: #f96d00;
-      background: transparent;
+    .read-more:hover {
+      background: #007bff;
+      color: white;
     }
 
-    .btn-outline-primary:hover {
-      background-color: #f96d00;
-      color: #fff;
+    /* How it works */
+    .how-it-works {
+      background: #f9f9ff;
+      text-align: center;
+      padding: 60px 20px;
     }
 
-    .footer {
-      background: #111;
-      color: #ccc;
-      padding: 60px 20px 30px;
-      font-size: 14px;
-    }
-
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-      justify-content: space-evenly;
-      gap: 40px;
-    }
-
-    .footer-section {
-      flex: 1 1 220px;
-    }
-
-    .footer-heading {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-section ul li {
+    .subtitle {
+      color: #007bff;
+      font-weight: bold;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    .footer-section ul li a {
-      color: #ccc;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .how-it-works h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
     }
 
-    .footer-section ul li a:hover {
-      color: #f96d00;
-    }
-
-    .social-icons a {
-      margin-right: 10px;
-      font-size: 16px;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #f96d00;
-    }
-
-    .subscribe-form {
+    .steps {
       display: flex;
-      max-width: 300px;
-    }
-
-    .subscribe-form input[type="email"] {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-      font-size: 14px;
-    }
-
-    .subscribe-form button {
-      padding: 10px 16px;
-      background-color: #f96d00;
-      border: none;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .subscribe-form button:hover {
-      background-color: #e85c00;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      font-size: 13px;
-      color: #777;
-    }
-
-
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .subscribe-form {
-        flex-direction: column;
-      }
-
-      .subscribe-form input[type="email"],
-      .subscribe-form button {
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-    }
-
-
-    #ftco-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      align-items: center;
       justify-content: center;
-      z-index: 9999;
+      flex-wrap: wrap;
+      gap: 40px;
     }
 
-    .circular {
-      animation: rotate 2s linear infinite;
+    .step {
+      width: 200px;
     }
 
-    @keyframes rotate {
-      100% {
-        transform: rotate(360deg);
+    .step i {
+      font-size: 40px;
+      color: #7cc144;
+      margin-bottom: 15px;
+      transition: 0.3s ease;
+    }
+
+    .step i:hover {
+      transform: scale(1.2);
+      color: #2196f3;
+    }
+
+    .step h4 {
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2e3339;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-text {
+        margin-left: 100px;
+        padding: 20px;
+      }
+
+      .card {
+        width: 45%;
+      }
+
+      .steps {
+        gap: 30px;
       }
     }
 
     @media (max-width: 768px) {
-      
-
-      .hero-wrap {
+      .hero {
         height: 300px;
+        justify-content: center;
+        text-align: center;
       }
 
-      .slider-text {
-        text-align: center;
+      .hero-text {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 80%;
+      }
+
+      .how-it-works h2 {
+        font-size: 24px;
+      }
+
+      .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .step {
+        width: 80%;
+      }
+
+      .footer {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        height: 250px;
+      }
+
+      .hero h1 {
+        font-size: 22px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .card p,
+      .step p {
+        font-size: 13px;
+      }
+
+      .read-more {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .step h4 {
+        font-size: 16px;
+      }
+
+      .step i {
+        font-size: 32px;
       }
     }
   </style>
-
+</head>
 <body>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
+        </div>
 
- 
-  <nav>
-    <div class="logo-container">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
-    </div>
-
-    <ul class="main-nav">
-        <li class="visible"><a href="index.html">Home</a></li>
+        <ul class="main-nav">
+            <li class="visible"><a href="index.html">Home</a></li>
                     <li class="visible"><a href="about.html">About</a></li>
-                    <li class="visible"><a href="service.html">Services</a></li>
+                    <li class="visible"><a href="services.html">Services</a></li>
                     <li class="visible"><a href="bmi.html">BMI</a></li>
                     <li class="visible"><a href="stories-page1.html">Stories</a></li>
                     <li class="visible"><a href="store.html">Store</a></li>
                     <li class="visible"><a href="login.html">Login</a></li>
-        <li class="menu-button" onclick="showSidebar()">
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
 
-                    <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <ul class="side_bar">
+            <li class="close-button" onclick="hideSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                 </svg>
-            </a>
-        </li>
+            </li>
+           <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="bmi.html">BMI</a></li>
+                    <li><a href="stories-page1.html">Stories</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
 
-    </ul>
+    
+   
 
-    <ul class="side_bar">
-        <li class="close-button" onclick="hideSidebar()">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-            </svg>
-        </li>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <p>Home Services</p>
+      <h1>Services</h1>
+    </div>
+  </section>
 
-        <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="bmi.html">BMI</a></li>
-      <li><a href="stories-page1.html">Stories</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+  <!-- Service Cards -->
+  <section class="services">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=3540&auto=format&fit=crop" alt="Exercise"/>
+      <h3>Exercise Program</h3>
+      <p>A structured plan to boost fitness, strength, and health.</p>
+      <a href="exercise.html" class="read-more">READ MORE</a>
+    </div>
+    <div class="card">
+      <img src="https://plus.unsplash.com/premium_photo-1723867208071-99c7d74ba1f9?q=80&w=3540&auto=format&fit=crop" alt="Nutrition"/>
+      <h3>Nutrition Plans</h3>
+      <p>A balanced diet tailored to boost health and fitness.</p>
+      <a href="nutrition.html" class="read-more">READ MORE</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=3506&auto=format&fit=crop" alt="Diet"/>
+      <h3>Diet Program</h3>
+      <p>A structured eating plan for weight and health management.</p>
+      <a href="diet.html" class="read-more">READ MORE</a>
+    </div>
+  </section>
 
-            <script>
+  <!-- How it works -->
+  <section class="how-it-works">
+    <p class="subtitle">OTHER SERVICES</p>
+    <h2>How it works?</h2>
+    <div class="steps">
+      <div class="step">
+        <i class="fas fa-list-check"></i>
+        <h4>Follow the program</h4>
+        <p>Even the all-powerful Pointing has no control...</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-dumbbell"></i>
+        <h4>Work for result</h4>
+        <p>Even the all-powerful Pointing has no control...</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-apple-alt"></i>
+        <h4>Eat healthy food</h4>
+        <p>Even the all-powerful Pointing has no control...</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-smile"></i>
+        <h4>Enjoy your life</h4>
+        <p>Even the all-powerful Pointing has no control...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 FitRush. All rights reserved.</p>
+  </footer>
+      <script>
             function showSidebar() {
                 const sidebar = document.querySelector('.side_bar');
+
                 sidebar.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+                // hiding the menu button
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'none';
 
             }
             
@@ -364,6 +384,7 @@
                 const menuButton = document.querySelector('.menu-button');
                 
                 if (sidebar.classList.contains('active') && 
+
                     !sidebar.contains(event.target) && 
                     event.target !== menuButton && 
                     !menuButton.contains(event.target)) {
@@ -374,132 +395,11 @@
             // Close sidebar when window is resized above 816px
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 816) {
+
                     hideSidebar();
                 }
+
             });
         </script>
-  
-  
-  
-  <section class="hero-wrap" style="background-image: url('images/yoga.jpg'); background-size: cover;">
-    <div class="container">
-      <div class="slider-text">
-        <p class="breadcrumbs"><a href="index.html">Home</a> > <span>Service</span></p>
-        <h1 class="bread">Services</h1>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="text-center">
-          <h2 class="heading-section">Our Services</h2>
-        </div>
-      </div>
-      <div class="row cards-row">
-        <div class="column">
-          <div class="services-wrap">
-            <div class="img" style="background-image: url('images/work.jpg');"></div>
-            <div class="media-body">
-              <h3 class="heading">Exercise Program</h3>
-              <p>Customized fitness plans to help you get stronger, healthier, and more active every day.</p>
-              <p><a href="Exercise.html" class="btn btn-outline-primary">READ MORE</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="services-wrap">
-            <div class="img" style="background-image: url('images/food.jpg');"></div>
-            <div class="media-body">
-              <h3 class="heading">Nutrition Plan</h3>
-              <p>Healthy and realistic diet strategies designed by professionals for long-term wellness.</p>
-              <p><a href="nutrition.html" class="btn btn-outline-primary">READ MORE</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="services-wrap">
-            <div class="img" style="background-image: url('images/dietplan.jpg');"></div>
-            <div class="media-body">
-              <h3 class="heading">Diet Program</h3>
-              <p>Sustainable eating plans that align with your goals, preferences, and health needs.</p>
-              <p><a href="diet.html" class="btn btn-outline-primary">READ MORE</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  
-  <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-section about">
-      <h2 class="footer-heading">FitRush</h2>
-      <p>Transform your body and mind with expert fitness plans built for real results.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-section links">
-      <h2 class="footer-heading">Quick Links</h2>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="Service.html">Service</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section contact">
-      <h2 class="footer-heading">Contact Us</h2>
-      <p><i class="fas fa-envelope"></i> support@FitRush.com</p>
-      <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-      <p><i class="fas fa-map-marker-alt"></i> 123 Learning Lane, Knowledge City</p>
-    </div>
-
-    <div class="footer-section subscribe">
-      <h2 class="footer-heading">Subscribe</h2>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 FitRush. All rights reserved.</p>
-  </div>
-</footer>
-
-
-  
-  <script>
-   
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
-    }
-
-   
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("ftco-loader");
-      if (loader) {
-        loader.style.display = "none";
-      }
-    });
-  </script>
-
 </body>
 </html>
-
-
-

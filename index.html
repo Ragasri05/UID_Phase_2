@@ -34,12 +34,15 @@
 
             /* Nav Bar */
             nav {
-                position: fixed;
+                /* Makes the nav bar stick to the top. */
+                position: fixed; 
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100px;
+                /* positions this on the top. */
                 z-index: 1000;
+                /* Uses flex box to arrange logo and links. */
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -123,7 +126,8 @@
                 align-items: flex-start;
                 justify-content: flex-start;
                 padding-top: 60px;
-                transform: translateX(100%);
+                /* Move the element to the right.. */
+                transform: translateX(100%); 
                 transition: transform 0.3s ease-out;
             }
 
@@ -157,10 +161,12 @@
                 z-index: 10000;
             }
 
-            .close-button {
+            .side_bar .close-button {
+                display: block;
                 position: absolute;
                 top: 20px;
-                right: 20px;
+                left: 15px;
+                right: 0;
                 background: none;
                 border: none;
                 color: white;
@@ -265,6 +271,7 @@
         <div class="banner">
             <nav>
                 <div class="logo-container">
+                    <!-- Links back to the home page -->
                     <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
                 </div>
         
@@ -291,13 +298,13 @@
                             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
                         </svg>
                     </li>
-                   <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="bmi.html">BMI</a></li>
-      <li><a href="stories-page1.html">Stories</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="login.html">Login</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                 <li><a href="services.html">Services</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="stories-page1.html">Stories</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
 
@@ -314,8 +321,11 @@
         <script>
             function showSidebar() {
                 const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.add('active');
+                sidebar.classList.add('active');  // now the name of the class will be .side_bar.active
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+                // hiding the menu button
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'none';        
             }
             
             function hideSidebar() {
@@ -329,17 +339,17 @@
                 const sidebar = document.querySelector('.side_bar');
                 const menuButton = document.querySelector('.menu-button');
                 
-                if (sidebar.classList.contains('active') && 
-                    !sidebar.contains(event.target) && 
-                    event.target !== menuButton && 
-                    !menuButton.contains(event.target)) {
+                if (sidebar.classList.contains('active') && // checks if side bar is open
+                    !sidebar.contains(event.target) &&  // checks if the clicked element is outside the side bar.
+                    event.target !== menuButton &&  // ensures the clicked element is not menu button 
+                    !menuButton.contains(event.target)) { //ensures the clicked element is not inside the menu button.
                     hideSidebar();
                 }
             });
 
             // Close sidebar when window is resized above 816px
             window.addEventListener('resize', function() {
-                if (window.innerWidth > 816) {
+                if (window.innerWidth > 816) {   //innerWidth returns the current width of the browser window.
                     hideSidebar();
                 }
             });
