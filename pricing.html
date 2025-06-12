@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Plans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f8f9fd;
+      color: #333;
+    }
+    
+    .pricing-header {
+        
+        padding: 180px 60px;
+        background: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed ;
+        
+        color: rgb(0, 0, 0);
+    }
+
+
+    .pricing-header h2 {
+      margin-top: 10px;
+      font-size: 36px;
+      color: #000000;
+    }
+
+    .pricing-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      color: #000000;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    .pricing-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h4 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .card .subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .card .price {
+      font-size: 32px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .card button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+    }
+    /* Footer */
+    .footer {
+      background-color: #2e3339;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo"></a>
+        </div>
+
+        <ul class="main-nav">
+            <li class="visible"><a href="index.html">Home</a></li>
+            <li class="visible"><a href="about.html">About</a></li>
+            <li class="visible"><a href="#">Services</a></li>
+            <li class="visible"><a href="#">BMI</a></li>
+            <li class="visible"><a href="#">Stories</a></li>
+            <li class="visible"><a href="#">Testimonies</a></li>
+            <li class="visible"><a href="#">Login</a></li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="side_bar">
+            <li class="close-button" onclick="hideSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_1.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">BMI</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Testimonies</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    
+    <script>
+    function showSidebar() {
+        const sidebar = document.querySelector('.side_bar'); // selects the elements with class "side_bar" and assigns it to a variable side_bar
+        sidebar.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+    }
+    
+    function hideSidebar() {
+        const sidebar = document.querySelector('.side_bar');
+        sidebar.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+        const sidebar = document.querySelector('.side_bar');
+        const menuButton = document.querySelector('.menu-button');
+        
+        if (sidebar.classList.contains('active') && 
+            !sidebar.contains(event.target) && 
+            event.target !== menuButton && 
+            !menuButton.contains(event.target)) {
+            hideSidebar();
+        }
+    });
+
+    // Close sidebar when window is resized above 816px
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 816) {
+            hideSidebar();
+        }
+    });
+</script>
+
+
+  <section class="pricing-header">
+    <p>Home  Pricing</p>
+    <h2>Pricing</h2>
+  </section>
+
+  <section class="pricing-section">
+    <h3 class="section-title">PRICE & PLANS</h3>
+    <h2 class="section-subtitle">Choose Your Perfect Plans</h2>
+    
+    <div class="pricing-cards">
+      <div class="card">
+        <h4>Starter</h4>
+        <p class="subtitle">A Beautiful Healthcare</p>
+        <p class="price">$49</p>
+        <ul>
+          <li>✔ 10 Workouts</li>
+          <li>✔ Meal plans in mobile</li>
+          <li>✔ One Coaching</li>
+          <li>✔ ~10% Group coaching</li>
+          <li>✔ 24/7 Customer support</li>
+        </ul>
+        <button>GET STARTED</button>
+      </div>
+
+      <div class="card">
+        <h4>Standard</h4>
+        <p class="subtitle">A Beautiful Healthcare</p>
+        <p class="price">$79</p>
+        <ul>
+          <li>✔ 20 Workouts</li>
+          <li>✔ Meal plans in mobile</li>
+          <li>✔ One Coaching</li>
+          <li>✔ ~20% Group coaching</li>
+          <li>✔ 24/7 Customer support</li>
+        </ul>
+        <button>GET STARTED</button>
+      </div>
+
+      <div class="card">
+        <h4>Premium</h4>
+        <p class="subtitle">A Beautiful Healthcare</p>
+        <p class="price">$109</p>
+        <ul>
+          <li>✔ 20 Workouts</li>
+          <li>✔ Meal plans in mobile</li>
+          <li>✔ One Coaching</li>
+          <li>✔ ~50% Group coaching</li>
+          <li>✔ 24/7 Customer support</li>
+        </ul>
+        <button>GET STARTED</button>
+      </div>
+
+      <div class="card">
+        <h4>Platinum</h4>
+        <p class="subtitle">A Beautiful Healthcare</p>
+        <p class="price">$159</p>
+        <ul>
+          <li>✔ 30 Workouts</li>
+          <li>✔ Meal plans in mobile</li>
+          <li>✔ One Coaching</li>
+          <li>✔ ~100% Group coaching</li>
+          <li>✔ 24/7 Customer support</li>
+        </ul>
+        <button>GET STARTED</button>
+      </div>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 FitRush. All rights reserved.</p>
+      </footer>
+
+</body>
+</html>
