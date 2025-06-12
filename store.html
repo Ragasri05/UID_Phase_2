@@ -8,7 +8,12 @@
 
 </head>
 <body>
-          <nav>
+
+            <div id = "navbg">
+                
+            </div>
+
+            <nav>
                 <div class="logo-container">
                     <a href="index.html" class="logo"><img src="storeimages/logo.jpg" alt="logo"></a>
                 </div>
@@ -16,11 +21,12 @@
                 <ul class="main-nav">
                     <li class="visible"><a href="index.html">Home</a></li>
                     <li class="visible"><a href="about.html">About</a></li>
-                    <li class="visible"><a href="service.html">Services</a></li>
-                    <li class="visible"><a href="bmi.html">BMI</a></li>
-                    <li class="visible"><a href="stories-page1.html">Stories</a></li>
+                    <li class="visible"><a href="#">Services</a></li>
+                    <li class="visible"><a href="#">BMI</a></li>
+                    <li class="visible"><a href="#">Stories</a></li>
+                    <li class="visible"><a href="#">Testimonies</a></li>
                     <li class="visible"><a href="store.html">Store</a></li>
-                    <li class="visible"><a href="login.html">Login</a></li>
+                    <li class="visible"><a href="#">Login</a></li>
                     <li class="menu-button" onclick="showSidebar()">
                         <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
@@ -37,17 +43,49 @@
                         </svg>
                     </li>
                     <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="bmi.html">BMI</a></li>
-      <li><a href="stories-page1.html">Stories</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="login.html">Login</a></li>
+                    <li><a href="about_1.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">BMI</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Testimonies</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="#">Login</a></li>
                 </ul>
 
                 
             </nav>
 
+            <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            }
+            
+            function hideSidebar() {
+                const sidebar = document.querySelector('.side_bar');
+                sidebar.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.side_bar');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (sidebar.classList.contains('active') && 
+                    !sidebar.contains(event.target) && 
+                    event.target !== menuButton && 
+                    !menuButton.contains(event.target)) {
+                    hideSidebar();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 816) {
+                    hideSidebar();
+                }
+            });
+        </script>
 
     
 
@@ -96,37 +134,37 @@
 
         <div class = "itemlist">
             <div>
-                <a href="#"><img src="storeimages/gymwear1.png" alt="t-hsirt1"></a>
+                <a href="#"><img src="storeimages/shirt1.jpg" alt="t-hsirt1"></a>
                 <p>Grey Tshirt<br>FitRush<br>&#8377;199</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://5.imimg.com/data5/SELLER/Default/2023/5/305517362/QU/HJ/GD/160881947/gym-tshirts-men.jpg" alt="t-hsirt2"></a>
+                <a href="#"><img src="storeimages/shirt2.jpg" alt="t-hsirt2"></a>
                 <p>Black<br>FitRush<br>&#8377;199</p>
                 <p>&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://www.thelabelbar.com/_next/image?url=https%3A%2F%2Fthelabelbar.s3.ap-south-1.amazonaws.com%2Fupload-dir%2FTLBTLB0688.jpg&w=1080&q=100" alt="t-hsirt3"></a>
+                <a href="#"><img src="storeimages/shirt3.jpg" alt="t-hsirt3"></a>
                 <p>Black<br>FitRush<br>&#8377;199</p>
                 <p>&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://fkngymwear.com/cdn/shop/files/LiftersOversizedTee.jpg?v=1699272148" alt="t-hsirt4"></a>
+                <a href="#"><img src="storeimages/shirt4.jpg" alt="t-hsirt4"></a>
                 <p>Black<br>FitRush<br>&#8377;299</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="storeimages/fitrushlady1.webp" alt="t-hsirt5"></a>
+                <a href="#"><img src="storeimages/shirt6.jpg" alt="t-hsirt5"></a>
                 <p>Grey Banyan<br>FitRush<br>&#8377;199</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://pixahive.com/wp-content/uploads/2020/08/Girl-Lifting-Dumbells-in-the-Gym-23653-pixahive.jpg" alt="t-hsirt6"></a>
+                <a href="#"><img src="storeimages/shirt5.jpg" alt="t-hsirt6"></a>
                 <p>Black top<br>FitRush<br>&#8377;199</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
@@ -143,38 +181,38 @@
 
         <div class = "itemlist">
             <div>
-                <a href="#"><img src="https://stylestryproductionwls47sou4z.cdn.e2enetworks.net/images/products/medium/512b6d17fc0254a947f9c0b1102d43cd957f93b3.webp" alt="Shoes1"></a>
+                <a href="#"><img src="storeimages/shoes1.jpg" alt="Shoes1"></a>
                 <p>White<br>FitRush<br>&#8377;799</p>
                 <p>&#9733;&#9733;&#9733;</p>
     
             </div>
 
             <div>
-                <a href="#"><img src="https://m.media-amazon.com/images/I/61019QH-W6L.jpg" alt="Shoes2"></a>
+                <a href="#"><img src="storeimages/shoes2.jpg" alt="Shoes2"></a>
                 <p>Pink soft<br>Asics<br>&#8377;699</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://www.jiomart.com/images/product/original/rvvzqiyfrq/lark-n-bean-shoes-for-ladies-and-girls-sports-running-casual-walking-lightweight-gym-shoes-slip-resistance-dynamic-feet-product-images-rvvzqiyfrq-3-202306031307.jpg?im=Resize=(500,630)" alt="Shoes3"></a>
+                <a href="#"><img src="storeimages/shoes3.jpg" alt="Shoes3"></a>
                 <p>Thick Heals<br>FitRush<br>&#8377;599</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/28511016/2024/3/26/716e345e-3676-4c11-bb85-1fe1968307d51711450737258BaccaBucciNIGHTGLIDERTheEliteSportspersonsVersatileFootwearW1.jpg" alt="Shoes4"></a>
+                <a href="#"><img src="storeimages/shoes4.jpg" alt="Shoes4"></a>
                 <p>Soft<br>FitRush<br>&#8377;799</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
                         <div>
-                <a href="#"><img src="https://baccabucci.com/cdn/shop/products/07-_MG_4652_1_753f13e1-2883-4b12-a669-59b56eef59b4.jpg?v=1643910011&width=2000" alt="Shoes5"></a>
+                <a href="#"><img src="storeimages/shoes5.jpg" alt="Shoes5"></a>
                 <p>Soft<br>FitRush<br>&#8377;599</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://en-sa.sssports.com/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw181dee1f/sss/SSS2/A/D/I/D/8/SSS2_ADID8755_4067889668659_1.jpg?sw=400&sh=400&sm=fit" alt="Shoes6"></a>
+                <a href="#"><img src="storeimages/shoes6.jpg" alt="Shoes6"></a>
                 <p>Soft<br>FitRush<br>&#8377;499</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
@@ -189,37 +227,37 @@
 
         <div class = "itemlist">
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPbOCTAyaeVzm0bWPEP0WzFyBYHkLRWE41kg&s" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip1.jpg" alt="equipment"></a>
                 <p>Dumbells<br>FitRush<br>&#8377;399</p>
                 <p>&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://pixahive.com/wp-content/uploads/2020/08/Tattooed-Athlete-lifting-Dumbbells-11462-pixahive.jpg" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip2.jpg" alt="equipment"></a>
                 <p>Heavy Dumbells<br>FitRush<br>&#8377;799</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb69vNAEYE9UW8sQH5T_Y609tb81D-mE3A5g&s" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip3.jpg" alt="equipment"></a>
                 <p>Bench Press<br>FitRush<br>&#8377;1199</p>
                 <p>&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_7EBQsTzVarzDOPg39PHIYaAWURt5zk_nmw&s" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip4.jpg" alt="equipment"></a>
                 <p>Bar<br>FitRush<br>&#8377;899</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://source.roboflow.com/0TrsB9Go1rNiKJ977Y6m2x6voai2/00HaAj2lpLU1drdEps0g/original.jpg" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip5.jpg" alt="equipment"></a>
                 <p>BenchPress System<br>FitRush</p>
                 <p>&#9733;&#9733;&#9733;<br>upto &#8377;3999</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://images.jdmagicbox.com/rep/b2b/cardio-fitness-equipment/cardio-fitness-equipment-1.jpg" alt="equipment"></a>
+                <a href="#"><img src="storeimages/equip6.jpg" alt="equipment"></a>
                 <p>Elliptical Cross Trainer<br>FitRush</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>upto &#8377;10000</p>
             </div>
@@ -233,37 +271,37 @@
 
         <div class = "itemlist">
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvfJfXei69HrmjbKSUow760iYa4enQJC0hmQ&s" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce1.jpg" alt="accessories"></a>
                 <p>Boxing gloves<br>FitRush<br>&#8377;499</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/sport-glove/a/i/j/both-m-mens-gym-gloves-with-12-inch-wrist-support-and-anti-slip-original-imah6t3de44wnxnp.jpeg?q=90&crop=false" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce2.jpg" alt="accessories"></a>
                 <p>Hand Gloves<br>FitRush<br>&#8377;399</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://www.wodarmour.in/cdn/shop/products/weight-lifting-belt-wodarmour-1.jpg?v=1724664657&width=600" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce3.jpg" alt="accessories"></a>
                 <p>Waist Support<br>FitRush<br>&#8377;299</p>
                 <p>&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://www.garagegymreviews.com/wp-content/uploads/aff1621254f7c1be92f64550478c56e6_5d0a74e7e360b.jpeg" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce4.jpg" alt="accessories"></a>
                 <p>Waist Support<br>FitRush<br>&#8377;399</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoebPYvMj475mB-hFCggWx-iMnKQn-GPaikg&s" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce5.jpg" alt="accessories"></a>
                 <p>WaistSupport<br>FitRush<br>&#8377;499</p>
                 <p>&#9733;&#9733;&#9733;</p>
             </div>
 
             <div>
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmtZ0LyPWv1XpqvdTLeK_dPUl1C1LKEBKquw&s" alt="accessories"></a>
+                <a href="#"><img src="storeimages/acce6.jpg" alt="accessories"></a>
                 <p>Gym Bag<br>FitRush<br>&#8377;499</p>
                 <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
@@ -278,46 +316,5 @@
         </div>
     </section>
 
-          <script>
-            function showSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-
-                sidebar.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
-                // hiding the menu button
-                const menu = document.querySelector('.menu-button');
-                menu.style.display = 'none';
-
-            }
-            
-            function hideSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            }
-
-            // Close sidebar when clicking outside of it
-            document.addEventListener('click', function(event) {
-                const sidebar = document.querySelector('.side_bar');
-                const menuButton = document.querySelector('.menu-button');
-                
-                if (sidebar.classList.contains('active') && 
-
-                    !sidebar.contains(event.target) && 
-                    event.target !== menuButton && 
-                    !menuButton.contains(event.target)) {
-                    hideSidebar();
-                }
-            });
-
-            // Close sidebar when window is resized above 816px
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 816) {
-
-                    hideSidebar();
-                }
-
-            });
-        </script>
 </body>
 </html>
