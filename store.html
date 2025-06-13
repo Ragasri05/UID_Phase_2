@@ -61,12 +61,16 @@
                 const sidebar = document.querySelector('.side_bar');
                 sidebar.classList.add('active');
                 document.body.style.overflow = 'hidden'; 
+                 const menu = document.querySelector('.menu-button');
+                menu.style.display = 'none';
             }
             
             function hideSidebar() {
                 const sidebar = document.querySelector('.side_bar');
                 sidebar.classList.remove('active');
                 document.body.style.overflow = 'auto';
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'block';
             }
 
             document.addEventListener('click', function(event) {

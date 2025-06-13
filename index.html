@@ -221,8 +221,22 @@
       font-size: 16px;
     }
 
+    .responsive img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        display: none;
+        margin: auto;
+    }
+
+
+
             /* Responsive Styles */
             @media (max-width: 930px) {
+                .responsive img {
+                    display: block;
+                }
                 .visible {
                     display: none !important; /* Ensure it overrides other styles */
                 }
@@ -312,6 +326,12 @@
                 <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
+            <br>
+            <br><br><br><br><br><br><br>
+
+            <div class="responsive">
+                <img src="images/home_background.jpg" alt="image nor found!!!">
+            </div>
 
             <div class="content">
                 <h1>GET STRONGER! GET FITTER! GET RUSHING!</h1>
@@ -337,6 +357,8 @@
                 const sidebar = document.querySelector('.side_bar');
                 sidebar.classList.remove('active');
                 document.body.style.overflow = 'auto'; // Re-enable scrolling
+                const menu = document.querySelector('.menu-button');
+                menu.style.display = 'block';
             }
 
             // Close sidebar when clicking outside of it
