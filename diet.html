@@ -348,46 +348,59 @@
 </footer>
       <script>
             function showSidebar() {
-                const sidebar = document.querySelector('.side_bar');
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.add('active');  // now the name of the class will be .side_bar.active
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
 
-                sidebar.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
-                // hiding the menu button
-                const menu = document.querySelector('.menu-button');
-                menu.style.display = 'none';
+    // hiding the menu button
+    const menu = document.querySelector('.menu-button');
+    menu.style.display = 'none'; 
+}
 
-            }
-            
-            function hideSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-                const menu = document.querySelector('.menu-button');
-                menu.style.display = 'block';
-            }
+function hideSidebar() {
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
 
-            // Close sidebar when clicking outside of it
-            document.addEventListener('click', function(event) {
-                const sidebar = document.querySelector('.side_bar');
-                const menuButton = document.querySelector('.menu-button');
-                
-                if (sidebar.classList.contains('active') && 
+    // show the menu button again
+    const menu = document.querySelector('.menu-button');
+    // Only show the menu button if screen is small
+    if (window.innerWidth <= 930) {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
 
-                    !sidebar.contains(event.target) && 
-                    event.target !== menuButton && 
-                    !menuButton.contains(event.target)) {
-                    hideSidebar();
-                }
-            });
+// Close sidebar when clicking outside of it
+document.addEventListener('click', function(event) {
+    const sidebar = document.querySelector('.side_bar');
+    const menuButton = document.querySelector('.menu-button');
+    
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(event.target) &&
+        event.target !== menuButton &&
+        !menuButton.contains(event.target)) {
+        hideSidebar();
+    }
+});
 
-            // Close sidebar when window is resized above 816px
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 816) {
+// Adjust menu and sidebar on resize
+window.addEventListener('resize', function() {
+    const sidebar = document.querySelector('.side_bar');
+    const menu = document.querySelector('.menu-button');
 
-                    hideSidebar();
-                }
+    if (window.innerWidth > 930) {
+        // Hide sidebar and menu button on large screens (assume full nav is visible)
+        sidebar.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        menu.style.display = 'none';
+    } else {
+        // Show menu button on small screens
+        menu.style.display = 'block';
+    }
+});
 
-            });
         </script>
 
 </body>

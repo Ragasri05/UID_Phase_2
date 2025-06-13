@@ -221,26 +221,24 @@
       font-size: 16px;
     }
 
+   
+
     .responsive img {
         width: 100%;
         max-width: 600px;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         display: none;
         margin: auto;
+        padding: 120px 0  0 0 ;
     }
 
-    br {
-        display: none;
-    }
+ 
 
 
             /* Responsive Styles */
             @media (max-width: 930px) {
+            
 
-                br {
-                    display: block;
-                }
+               
                 .responsive img {
                     display: block;
                 }
@@ -308,7 +306,7 @@
                                         <li class="visible"><a href="pricing.html">Pricing</a></li>
 
                     <li class="visible"><a href="login.html">Login</a></li>
-                    <li class="menu-button" onclick="showSidebar()">
+                    <li class="menu-button" style="display: none;" onclick="showSidebar()">
                         <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
@@ -333,10 +331,9 @@
                 <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
-            <br>
-            <br><br><br><br><br><br><br>
-
+            <br><br><br><br><br><br>
             <div class="responsive">
+
                 <img src="images/home_background.jpg" alt="image nor found!!!">
             </div>
 
@@ -352,41 +349,59 @@
 
         <script>
             function showSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.add('active');  // now the name of the class will be .side_bar.active
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
-                // hiding the menu button
-                const menu = document.querySelector('.menu-button');
-                menu.style.display = 'none';        
-            }
-            
-            function hideSidebar() {
-                const sidebar = document.querySelector('.side_bar');
-                sidebar.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-                const menu = document.querySelector('.menu-button');
-                menu.style.display = 'block';
-            }
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.add('active');  // now the name of the class will be .side_bar.active
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
 
-            // Close sidebar when clicking outside of it
-            document.addEventListener('click', function(event) {
-                const sidebar = document.querySelector('.side_bar');
-                const menuButton = document.querySelector('.menu-button');
-                
-                if (sidebar.classList.contains('active') && // checks if side bar is open
-                    !sidebar.contains(event.target) &&  // checks if the clicked element is outside the side bar.
-                    event.target !== menuButton &&  // ensures the clicked element is not menu button 
-                    !menuButton.contains(event.target)) { //ensures the clicked element is not inside the menu button.
-                    hideSidebar();
-                }
-            });
+    // hiding the menu button
+    const menu = document.querySelector('.menu-button');
+    menu.style.display = 'none'; 
+}
 
-            // Close sidebar when window is resized above 816px
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 816) {   //innerWidth returns the current width of the browser window.
-                    hideSidebar();
-                }
-            });
+function hideSidebar() {
+    const sidebar = document.querySelector('.side_bar');
+    sidebar.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+
+    // show the menu button again
+    const menu = document.querySelector('.menu-button');
+    // Only show the menu button if screen is small
+    if (window.innerWidth <= 930) {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
+// Close sidebar when clicking outside of it
+document.addEventListener('click', function(event) {
+    const sidebar = document.querySelector('.side_bar');
+    const menuButton = document.querySelector('.menu-button');
+    
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(event.target) &&
+        event.target !== menuButton &&
+        !menuButton.contains(event.target)) {
+        hideSidebar();
+    }
+});
+
+// Adjust menu and sidebar on resize
+window.addEventListener('resize', function() {
+    const sidebar = document.querySelector('.side_bar');
+    const menu = document.querySelector('.menu-button');
+
+    if (window.innerWidth > 930) {
+        // Hide sidebar and menu button on large screens (assume full nav is visible)
+        sidebar.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        menu.style.display = 'none';
+    } else {
+        // Show menu button on small screens
+        menu.style.display = 'block';
+    }
+});
+
         </script>
     </body>
 </html>
